@@ -10,6 +10,21 @@ jQuery(document).ready(function(){
 	
 	// here all ready functions
 	
+	window.onhashchange = function() {
+		var location 	= window.location.href;
+		var array		= location.split('#');
+		var href;
+		if(array.length === 1){
+			href = 'home';
+			jQuery('.transition_link a[href="#'+href+'"]').trigger('click','clear');
+		}
+		if(array.length > 1){
+			href	= array[1];
+			if(href === ''){href = 'home';}
+			jQuery('.transition_link a[href="#'+href+'"]').trigger('click','clear');
+		}
+	};
+	
 	tokyo_tm_modalbox();
 	tokyo_tm_page_transition();
 	tokyo_tm_trigger_menu();
@@ -63,7 +78,7 @@ function tokyo_tm_page_transition(){
 	var enter	 		= wrapper.data('enter');
 	var exit		 	= wrapper.data('exit');
 	
-	button.on('click',function(){
+	button.on('click',function(event,history){
 		var element 	= jQuery(this);
 		var href		= element.attr('href');
 		if(element.parent().hasClass('tokyo_tm_button')){
@@ -73,18 +88,21 @@ function tokyo_tm_page_transition(){
 		}
 		var sectionID 	= jQuery(href);
 		var parent	 	= element.closest('li');
-			if(!parent.hasClass('active')) {
-				allLi.removeClass('active');
-				wrapper.find(section).removeClass('animated '+enter);
-				if(wrapper.hasClass('opened')) {
-					wrapper.find(section).addClass('animated '+exit);
-				}
-				parent.addClass('active');
-				wrapper.addClass('opened');
-				wrapper.find(sectionID).removeClass('animated '+exit).addClass('animated '+enter);
-				jQuery(section).addClass('hidden');
-				jQuery(sectionID).removeClass('hidden').addClass('active');
+		if(!parent.hasClass('active')) {
+			allLi.removeClass('active');
+			wrapper.find(section).removeClass('animated '+enter);
+			if(wrapper.hasClass('opened')) {
+				wrapper.find(section).addClass('animated '+exit);
 			}
+			parent.addClass('active');
+			wrapper.addClass('opened');
+			wrapper.find(sectionID).removeClass('animated '+exit).addClass('animated '+enter);
+			jQuery(section).addClass('hidden');
+			jQuery(sectionID).removeClass('hidden').addClass('active');
+			if(history !== 'clear'){
+				window.history.pushState("object or string", element.text(), href);
+			}
+		}
 		return false;
 	});
 }
