@@ -62,6 +62,19 @@
   /* Force square aspect ratio on all photography thumbnails */
   #Photography .my_image img,
   #Photography .portfolio_list li .inner img { aspect-ratio: 1 / 1; }
+
+  /* ── Mobile fixes ── */
+  @media (max-width: 767px) {
+    /* Photography: stack project cards vertically */
+    #Photography .portfolio_list li { width: 100%; }
+
+    /* Hide floating title tooltip (touch devices never fire mouseleave) */
+    .tokyo_tm_portfolio_titles { display: none !important; }
+
+    /* CV: hide embed, show download link */
+    #CV .cv-embed { display: none; }
+    #CV .cv-mobile-link { display: block !important; }
+  }
 </style>
 
 </head>
@@ -175,7 +188,7 @@
 				        <div class="description_inner">
 				          <div class="left">
 
-									<p>I am an ArtScience Fellow at DARK, Niels Bohr Institute, University of Copenhagen, where I am also part of the <a href="https://yonderartscience.com/">Yonder | Art•Science</a> team—a program that fosters hybrid forms of research at the intersection of artistic and scientific inquiry. In September 2026 I will be starting a Ramon y Cajal Fellowship (tenure-track) at the <a href="https://gaa.upc.edu/en">Group of Astronomy and Astrophysics (GAA)</a>, Universitat Politècnica de Catalunya (UPC), Barcelona. Before that I was a Nordita Postdoctoral Fellow at the Nordic Institute for Theoretical Physics (Stockholm University and KTH), and prior to that a Schmidt AI in Science Postdoctoral Fellow at the University of Chicago, where I was part of the <a href="https://surveys.uchicago.edu/">Survey Science Group</a>. I completed my PhD in Cosmology at the Universitat Autònoma de Barcelona.</p>
+									<p>I am an ArtScience Fellow at <a href="https://yonderartscience.com/">Yonder | Art•Science</a>, hosted by DARK at the Niels Bohr Institute, University of Copenhagen. In September 2026 I will be starting a Ramon y Cajal Fellowship (tenure-track) at the <a href="https://gaa.upc.edu/en">Group of Astronomy and Astrophysics (GAA)</a>, Universitat Politècnica de Catalunya (UPC), Barcelona. Before that I was a Nordita Postdoctoral Fellow at the Nordic Institute for Theoretical Physics (Stockholm University and KTH), and prior to that a Schmidt AI in Science Postdoctoral Fellow at the University of Chicago, where I was part of the <a href="https://surveys.uchicago.edu/">Survey Science Group</a>. I completed my PhD in Cosmology at the Universitat Autònoma de Barcelona.</p>
 
 									<p>I am interested in learning about the nature of dark matter and dark energy using galaxy surveys, particularly with weak gravitational lensing and large-scale structure measurements. A big part of my work focuses on developing new methodologies to extract more information from the data. One thing I am particularly excited about is <strong>gravitational lensing ratios</strong>—these neat measurements that let us test cosmology without worrying too much about complicated astrophysics. Together with some close collaborators, we have pioneered some of the first measurements of lensing ratios using photometric data, and it's been exciting to see other collaborations (like KiDS, HSC, and DESI) start using these techniques too! I also work on applying machine learning methods to extract higher-order information from weak lensing mass maps.</p>
 
@@ -193,6 +206,7 @@
 				              <li><p><span>Email:</span><a href="mailto:judit.prat@nbi.ku.dk">judit.prat@nbi.ku.dk</a></p></li>
 				              <li><p><span>Github:</span><a href="https://github.com/jpratmarti">jpratmarti</a></p></li>
 				              <li><p><span>ORCID:</span><a href="https://orcid.org/0000-0002-5933-5150">0000-0002-5933-5150</a></p></li>
+				              <li><p><span>Press:</span><a href="https://www.diarideterrassa.com/gent-de-terrassa/2025/01/16/lart-i-la-ciencia-tenen-relacio-totes-venen-des-de-la-curiositat/">Diari de Terrassa</a></p></li>
 				            </ul>
 				          </div>
 				        </div>
@@ -334,7 +348,7 @@
 												<div class="entry tokyo_tm_portfolio_animation_wrap" data-title="DES Y6: cosmological constraints from all probes combined" data-category="Image">
 													<a class="zoom" href="img/research/y6_desall.png">
 														<img src="img/research/y6_desall.png" alt="DES Y6 combination of cosmological probes" style="width:100%; max-width:900px; height:auto;" />
-														<div class="main_image" data-img-url="img/research/y6_desall.png" style="min-height:500px; background-size:contain; background-repeat:no-repeat;"></div>
+														<div class="main_image" data-img-url="img/research/y6_desall.png" ></div>
 													</a>
 												</div>
 											</div>
@@ -678,22 +692,22 @@
 										<div class="description_inner">
 											<div class="left">
 
-												<div>
+												<div class="cv-embed">
 										      <object
 										        data='img/CV/CV.pdf'
 										        type="application/pdf"
-										        width="700"
-										        height="878"
+										        style="width:100%; max-width:700px; height:878px;"
 										      >
-
 										        <iframe
 										          src='img/CV/CV.pdf'
-										          width="700"
-										          height="878"
+										          style="width:100%; max-width:700px; height:878px;"
 										        >
 										        <p>This browser does not support PDF!</p>
 										        </iframe>
 										      </object>
+										    </div>
+										    <div class="cv-mobile-link" style="display:none;">
+										      <p><a href="img/CV/CV.pdf" target="_blank">View CV (PDF)</a></p>
 										    </div>
 
 											</div>
