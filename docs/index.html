@@ -36,6 +36,35 @@
 <!--[if lt IE 9]> <script type="text/javascript" src="js/modernizr.custom.js"></script> <![endif]-->
 <!-- /STYLES -->
 
+<script>
+  // Open all external links in a new tab so navigating away doesn't lose your place
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('a[href^="http"]').forEach(function(a) {
+      if (a.hostname !== window.location.hostname) {
+        a.setAttribute('target', '_blank');
+        a.setAttribute('rel', 'noopener noreferrer');
+      }
+    });
+  });
+</script>
+
+<style>
+  a { color: #7ab8b8; }
+  a:hover { color: #9dd0d0; }
+  div > li { margin-left: 1.5em; }
+
+  /* Photography section: 3-column project cards */
+  #Photography .portfolio_list li { width: 33.33%; }
+
+  /* Photography popups: clean 3-column square grid, no odd nth-child override */
+  #Photography .additional_images ul li { width: 33.33%; }
+  #Photography .additional_images ul li:nth-child(3n-2) { width: 33.33%; }
+
+  /* Force square aspect ratio on all photography thumbnails */
+  #Photography .my_image img,
+  #Photography .portfolio_list li .inner img { aspect-ratio: 1 / 1; }
+</style>
+
 </head>
 
 <body>
@@ -70,10 +99,10 @@
 					<li class="active"><a href="#home">Home</a></li>
 					<li><a href="#about">About</a></li>
 					<li><a href="#research">Research</a></li>
-					<li><a href="#CV">CV</a></li>
-					<li><a href="#outreach">Outreach</a></li>
+					<li><a href="#Photography">Photography</a></li>
 					<li><a href="#diversity">Equity, diversity and inclusion</a></li>
-					<li><a href="#Photography">Chicago In Color</a></li>
+					<li><a href="#outreach">Outreach</a></li>
+					<li><a href="#CV">CV</a></li>
 				</ul>
 			</div>
 		</div>
@@ -90,10 +119,10 @@
 						<li class="active"><a href="#home">Home</a></li>
 						<li><a href="#about">About</a></li>
 						<li><a href="#research">Research</a></li>
-						<li><a href="#CV">CV</a></li>
+						<li><a href="#Photography">Photography</a></li>
 						<li><a href="#diversity">Equity, diversity and inclusion</a></li>
-					  <li><a href="#outreach">Outreach</a></li>
-						<li><a href="#Photography">Chicago In Color</a></li>
+						<li><a href="#outreach">Outreach</a></li>
+						<li><a href="#CV">CV</a></li>
 					</ul>
 				</div>
 				<div class="copyright">
@@ -113,11 +142,11 @@
 						<div class="tokyo_tm_home">
 							<div class="home_content">
 								<div class="avatar">
-									<div class="image" data-img-url="img/about_me/Mexic-380.jpeg"></div>
+									<div class="image" data-img-url="img/about_me/me.jpeg"></div>
 								</div>
 								<div class="details">
 									<h3 class="name">Judit <span>Prat</span></h3>
-									<p class="job"> I am a Nordita fellow in the Physics department of Stockholm University and the KTH Royal Institute of Technology.</p>
+									<p class="job">ArtScience Fellow at DARK at the Niels Bohr Institute at University of Copenhagen investigating the nature of dark energy.</p>
 										<!--
 									<div class="social">
 										<ul>
@@ -140,20 +169,20 @@
 				    <div class="tokyo_tm_about">
 				      <div class="about_image">
 				        <img src="img/thumbs/4-2.jpg" alt="" />
-				        <div class="main" data-img-url="img/about_me/Mexic-380.jpeg"></div>
+				        <div class="main" data-img-url="img/about_me/me.jpeg"></div>
 				      </div>
 				      <div class="description">
 				        <h3 class="name">Judit Prat  <span></span></h3>
 				        <div class="description_inner">
 				          <div class="left">
 
-									<p>I am a Nordita fellow in the Physics department of Stockholm University and the KTH Royal Institute of Technology. Before that I was a Schmidt AI in Science postdoctoral fellow at the University of Chicago, where I was part of the <a href="https://surveys.uchicago.edu/">Survey Science Group</a>. I previously completed my PhD in Cosmology at the Autonomous University of Barcelona.</p>
+									<p>I am an ArtScience Fellow at DARK, Niels Bohr Institute, University of Copenhagen, where I am also part of the <a href="https://yonderartscience.com/">Yonder | Art•Science</a> team—a program that fosters hybrid forms of research at the intersection of artistic and scientific inquiry. In September 2026 I will be starting a Ramon y Cajal Fellowship (tenure-track) at the <a href="https://gaa.upc.edu/en">Group of Astronomy and Astrophysics (GAA)</a>, Universitat Politècnica de Catalunya (UPC), Barcelona. Before that I was a Nordita Postdoctoral Fellow at the Nordic Institute for Theoretical Physics (Stockholm University and KTH), and prior to that a Schmidt AI in Science Postdoctoral Fellow at the University of Chicago, where I was part of the <a href="https://surveys.uchicago.edu/">Survey Science Group</a>. I completed my PhD in Cosmology at the Universitat Autònoma de Barcelona.</p>
 
 									<p>I am interested in learning about the nature of dark matter and dark energy using galaxy surveys, particularly with weak gravitational lensing and large-scale structure measurements. A big part of my work focuses on developing new methodologies to extract more information from the data. One thing I am particularly excited about is <strong>gravitational lensing ratios</strong>—these neat measurements that let us test cosmology without worrying too much about complicated astrophysics. Together with some close collaborators, we have pioneered some of the first measurements of lensing ratios using photometric data, and it's been exciting to see other collaborations (like KiDS, HSC, and DESI) start using these techniques too! I also work on applying machine learning methods to extract higher-order information from weak lensing mass maps.</p>
 
-									<p>I am part of the <a href="https://www.darkenergysurvey.org/">Dark Energy Survey</a> (DES), where since 2021 I've been Co-Convener of the Weak Lensing Working Group and member of the Science Committee. I've also been involved with the <a href="https://lsstdesc.org/">LSST Dark Energy Science Collaboration</a>, where I helped develop <a href="https://txpipe.readthedocs.io/en/latest/">TXPipe</a>, the analysis pipeline we'll use when data from the Vera Rubin Observatory starts coming in. Recently I wrote an <a href="https://www.sciencedirect.com/science/article/pii/B9780443214394000717?via%3Dihub">accessible review on Weak Gravitational Lensing</a> for Elsevier's Encyclopedia of Astrophysics—I tried to make it a good starting point for anyone curious about the field, and particular for new students starting to work on weak lensing data.</p>
+									<p>I am part of the <a href="https://www.darkenergysurvey.org/">Dark Energy Survey</a> (DES), where since 2021 I've been Co-Convener of the Weak Lensing Working Group and member of the Science Committee. I've also been involved with the <a href="https://lsstdesc.org/">LSST Dark Energy Science Collaboration</a>, where I helped develop <a href="https://txpipe.readthedocs.io/en/latest/">TXPipe</a>, the analysis pipeline we'll use when data from the Vera Rubin Observatory starts coming in. Recently I wrote an <a href="https://www.sciencedirect.com/science/article/pii/B9780443214394000717?via%3Dihub">accessible review on Weak Gravitational Lensing</a> for Elsevier's Encyclopedia of Astrophysics—I tried to make it a good starting point for anyone curious about the field, and particularly for new students starting to work on weak lensing data.</p>
 
-									<p>I am also excited about sharing the science I am doing with the broader community through outreach activities.  Moreover, I care a lot about equity, diversity and inclusion and ultimately about improving communities. I have been part of several efforts to support women and BIPOC (Black, Indigenous and People of Color) members in Science, and in particular in Physics. During my PhD, I was part of the Gender Equality Committee of IFAE at Universitat Autònoma de Barcelona, which I helped reactivate with several initiatives. Later, I was part of the founding team and coordinated the Community Engagement Working Group at the Astronomy and Astrophysics Department at the University of Chicago (2020-2023), where we worked to support the BIPOC members of the department. Other random facts about me include that I love making plots, flowcharts and infographics — choosing the colors is the best part ;) — doing sports and being outdoors, and generally just being around and talking to people!</p>
+									<p>I am also excited about sharing the science I am doing with the broader community through outreach activities.  Moreover, I care a lot about equity, diversity and inclusion and ultimately about improving communities. I have been part of several efforts to support women and BIPOC (Black, Indigenous and People of Color) members in Science, and in particular in Physics. During my PhD, I was part of the Gender Equality Committee of IFAE at Universitat Autònoma de Barcelona, which I helped reactivate with several initiatives. Later, I was part of the founding team and coordinated the Community Engagement Working Group at the Astronomy and Astrophysics Department at the University of Chicago (2020-2023), where we worked to support the BIPOC members of the department. More recently, I was part of the LSST-DESC Collaboration Council (2023–2025), working to strengthen collaboration culture across the international DESC community. I continue to look for ways to contribute to more equitable and inclusive research environments in my current role at DARK.</p>
 	
 				          </p>
 				            <!--<div class="tokyo_tm_button">
@@ -162,8 +191,9 @@
 				          </div>
 				          <div class="right">
 				            <ul>
-				              <li><p><span>Email:</span><a href="judit.prat@su.se">judit.prat@su.se</a></p></li>
+				              <li><p><span>Email:</span><a href="mailto:judit.prat@nbi.ku.dk">judit.prat@nbi.ku.dk</a></p></li>
 				              <li><p><span>Github:</span><a href="https://github.com/jpratmarti">jpratmarti</a></p></li>
+				              <li><p><span>ORCID:</span><a href="https://orcid.org/0000-0002-5933-5150">0000-0002-5933-5150</a></p></li>
 				            </ul>
 				          </div>
 				        </div>
@@ -281,80 +311,77 @@
 									</div>
 									</div>
 
-							<h3>Cosmology from galaxy surveys</h3>
+							<h3>Cosmological constraints from galaxy surveys</h3>
 								<div class="description">
 									<div class="description_inner">
 										<div class="left">
 
-											<h4 style="margin-top: 0.3cm;">Data analysis with current surveys</h4>
-											<p>A major part of my research has consisted of extracting cosmological information from large-scale structure and weak gravitational lensing measurements. In particular I have used observations from the <a href="https://www.darkenergysurvey.org/">Dark Energy Survey</a> (DES), a photometric galaxy survey that covers ~5000 sq. deg. of the southern sky and has measured the positions and shapes of over one hundred million galaxies. Specifically, I have been part of the core team that has performed a so-called 3×2pt analysis, which stands for the combination of three two point correlation functions: one from position-position correlations (galaxy clustering), one from shear-shear correlations (cosmic shear), and one from position-shear correlations (galaxy-galaxy lensing). Since 2021, as Co-Convener of the DES Weak Lensing Working Group, I am helping to coordinate the flagship analysis of the full six-year dataset.</p>
+											<p>A major part of my research has consisted of extracting cosmological information from large-scale structure and weak gravitational lensing measurements. In particular I have used observations from the <a href="https://www.darkenergysurvey.org/">Dark Energy Survey</a> (DES), a photometric galaxy survey that covers ~5000 sq. deg. of the southern sky and has measured the positions and shapes of over one hundred million galaxies. Specifically, I have been part of the core team that has performed a so-called 3×2pt analysis, which stands for the combination of three two-point correlation functions: one from position-position correlations (galaxy clustering), one from shear-shear correlations (cosmic shear), and one from position-shear correlations (galaxy-galaxy lensing). As Co-Convener of the DES Weak Lensing Working Group since 2021, I was a core member of the team for the flagship analysis of the full six-year dataset, whose results were <a href="https://nordita.org/news/dark-energy-survey-scientists-release-new-analysis-of-how-the-universe-expands/">released in January 2026</a>.</p>
 
-											<p>I recently wrote a <a href="https://www.sciencedirect.com/science/article/pii/B9780443214394000717?via%3Dihub">review</a> that summarizes the current state of weak lensing cosmology—I tried to make it accessible as a first entry point for students or researchers who are interested in the field. Here you can also find some of the main results from the DES Y3 3×2pt analysis:</p>
+											<p>For the first time, DES combined four dark energy probes from a single experiment—3×2pt (weak lensing + galaxy clustering), Type Ia supernovae, BAO, and galaxy clusters—delivering constraints more than twice as strong as the previous analysis. In the standard ΛCDM model, the combined DES result is consistent with the CMB (Planck+ACT+SPT) at the 2.8σ level. In the wCDM extension, where dark energy is allowed to evolve over time, the equation of state is found to be consistent with a cosmological constant (w ≈ −1), with a 2.5σ consistency with the CMB. Results for more extended evolving dark energy models (such as w0wa) are coming soon—stay tuned!</p>
 
-											<li><a href="https://arxiv.org/abs/2105.13549">Dark Energy Survey Year 3 Results: Cosmological Constraints from Galaxy Clustering and Weak Lensing.</a></li>
+											<ul style="padding-left:2em; margin:0.5em 0;">
+												<li><a href="https://arxiv.org/abs/2601.14559">Dark Energy Survey Year 6 Results: Cosmological Constraints from Galaxy Clustering and Weak Lensing.</a></li>
+												<li><a href="https://arxiv.org/abs/2105.13549">Dark Energy Survey Year 3 Results: Cosmological Constraints from Galaxy Clustering and Weak Lensing.</a></li>
+											</ul>
 
 										</div>
 									</div>
 								</div>
 								<div class="list_wrapper">
 									<ul class="portfolio_list gallery_zoom">
-										<li class="image">
+										<li class="image" style="width:100%;">
 											<div class="inner">
-												<div class="entry tokyo_tm_portfolio_animation_wrap" data-title="DES results" data-category="Image">
-													<a class="zoom" href="img/research/des_probes_om_sigma8.png">
-														<img src="img/research/des_probes_om_sigma8.png" alt="" />
-														<div class="main_image" data-img-url="img/research/des_probes_om_sigma8.png"></div>
-													</a>
-												</div>
-											</div>
-										</li>
-										<li class="image">
-											<div class="inner">
-												<div class="entry tokyo_tm_portfolio_animation_wrap" data-title="Combination of probes" data-category="Image">
-													<a class="zoom" href="img/research/early_vs_late.png">
-														<img src="img/research/early_vs_late.png" alt="" />
-														<div class="main_image" data-img-url="img/research/early_vs_late.png"></div>
+												<div class="entry tokyo_tm_portfolio_animation_wrap" data-title="DES Y6: cosmological constraints from all probes combined" data-category="Image">
+													<a class="zoom" href="img/research/y6_desall.png">
+														<img src="img/research/y6_desall.png" alt="DES Y6 combination of cosmological probes" style="width:100%; max-width:900px; height:auto;" />
+														<div class="main_image" data-img-url="img/research/y6_desall.png" style="min-height:500px; background-size:contain; background-repeat:no-repeat;"></div>
 													</a>
 												</div>
 											</div>
 										</li>
 									</ul>
 								</div>
+								<p style="font-size:0.85em; color:#888; margin-top:1.8em;"><em>Cosmological constraints from the DES Year 6 dataset in ΛCDM (left) and wCDM (right). Shown are results from 3×2pt (pink), SNe Ia + BAO (black/gray), clusters + 3×2pt (brown), all DES probes combined (orange), and CMB from Planck+ACT+SPT (blue). For the first time, DES combined four independent dark energy probes from a single experiment, delivering constraints more than twice as strong as the previous analysis. The DES combination is consistent with the CMB at the 2.8σ level in ΛCDM and 2.5σ in wCDM.</em></p>
 
-								<h4>Preparation for future surveys</h4>
-								<p>Besides this, I'm also a member of the <a href="https://lsstdesc.org/">Dark Energy Science Collaboration</a> (DESC) within the Vera Rubin Observatory's Legacy Survey of Space and Time, where I'm developing and validating the pipelines that will be used when the data arrives. I led the development of <a href="https://txpipe.readthedocs.io/en/latest/">TXPipe</a>, a modular pipeline for generating robust data vectors in cosmology analyses for the LSST. In the publication below we present the software, which is public for everyone:</p>
-								<li><a href="https://arxiv.org/abs/2212.09345">The catalog-to-cosmology framework for weak lensing and galaxy clustering for LSST.</a></li>
+								<div style="border-left: 4px solid #7ab8b8; padding: 0.8em 1.2em; margin: 1.5em 0; background: rgba(122,184,184,0.07); border-radius: 4px;">
+									<p style="margin:0;"><strong>Review article:</strong> I also wrote a <a href="https://www.sciencedirect.com/science/article/pii/B9780443214394000717?via%3Dihub">comprehensive review of weak lensing cosmology</a>, published as a chapter in the <em>Encyclopedia of Astrophysics</em> (Elsevier). It covers the theoretical framework, observational techniques, key systematic effects, and the path from measurements to cosmological inference—written as an accessible entry point for graduate students and researchers new to the field.</p>
+								</div>
 
-								<h3 style="margin-top: 1cm;">Expanding frontiers</h3>
-								<h4 style="margin-top: 0.3cm;">Gravitational Lensing Ratios: A Clean Geometrical Probe</h4>
-								<h5><em><small>Developing new ways to test cosmology</small></em></h5>
+								<h3 style="margin-top: 1.5cm;">Developing new probes and methods</h3>
 
-								<p>A big focus of my research is working on <strong>gravitational lensing ratios</strong> as probes for cosmology. The idea is the following: by taking ratios of different lensing measurements (like galaxy-CMB lensing compared to galaxy-galaxy lensing), we get something that depends purely on geometry—specifically, angular diameter distances. This means we don't have to worry as much about all the messy astrophysics (like galaxy bias and the matter power spectrum), and we can even use data from smaller scales that we'd normally have to throw away because the astrophysics is too uncertain.</p>
+								<h4 style="margin-top: 0.5cm;">Gravitational lensing ratios: a geometrical probe of dark energy</h4>
 
-								<p>Together with close collaborators, we have made the first to make these measurements work with photometric data. My work includes both CMB lensing ratios (<a href="https://arxiv.org/abs/1810.02212">Prat et al. 2019</a>) and galaxy-galaxy lensing ratios (<a href="https://arxiv.org/abs/2105.13541">Prat et al. 2018</a>; <a href="https://arxiv.org/abs/2105.13542">Sánchez, Prat et al. 2022</a>). It's been really cool to see other collaborations like KiDS, HSC, and DESI adopt these techniques.</p>
+								<p>A big focus of my research is working on <strong>gravitational lensing ratios</strong> as probes for cosmology. The idea is the following: by taking ratios of different lensing measurements (like galaxy-CMB lensing compared to galaxy-galaxy lensing), we get something that depends purely on geometry—specifically, angular diameter distances. This means we don’t have to worry as much about all the messy astrophysics (like galaxy bias and the matter power spectrum), and we can even use data from smaller scales that we’d normally have to throw away because the astrophysics is too uncertain.</p>
 
-								<p>What makes lensing ratios especially interesting is that they are particularly sensitive to spatial curvature and dark energy evolution, and they constrain different parameter combinations than standard probes like baryon acoustic oscillations. With next-generation data from LSST and Simons Observatory coming soon, we'll be able to make much more precise measurements and really test whether dark energy is evolving over time.</p>
+								<p>Together with close collaborators, we were among the first to make these measurements work with photometric data. My work includes both CMB lensing ratios (<a href="https://arxiv.org/abs/1810.02212">Prat et al. 2019</a>) and galaxy-galaxy lensing ratios (<a href="https://arxiv.org/abs/2105.13541">Prat et al. 2018</a>; <a href="https://arxiv.org/abs/2105.13542">Sánchez, Prat et al. 2022</a>). It’s been really cool to see other collaborations like KiDS, HSC, and DESI adopt these techniques.</p>
 
-								<h4 style="margin-top: 0.8cm;">To the small-scale regime</h4>
-								<h5><em><small>Learning about the galaxy-matter connection and developing mitigation schemes</small></em></h5>
+								<p>What makes lensing ratios especially interesting is that they are particularly sensitive to spatial curvature and dark energy evolution, and they constrain different parameter combinations than standard probes like baryon acoustic oscillations. With next-generation data from LSST and Simons Observatory coming soon, we’ll be able to make much more precise measurements and really test whether dark energy is evolving over time.</p>
 
-								<p>Extracting useful cosmological information from small scale two-point measurements is tricky because of non-linearities and baryonic effects. To deal with these complications, cosmological analyses often just discard scales below a certain threshold—for instance, we had to throw out ~50% of the signal-to-noise in the DES Y3 3×2pt analysis! So one of the biggest gains we could make for future analyses would be figuring out how to reliably use smaller scales.</p>
-
-								<p>I have been working on this from a few different angles. I have been part of efforts to better understand the <a href="https://arxiv.org/abs/2106.08438">galaxy-halo connection from galaxy-galaxy lensing</a> and we have <a href="https://arxiv.org/abs/2506.22367">measured the stellar-to-halo mass relation (SHMR)</a> using a new stellar mass sample we developed for DES Y3 (which you can find publicly available <a href="https://des.ncsa.illinois.edu/releases/y3a2/Y3stellarmass">here</a>). I have also published a <a href="https://arxiv.org/abs/2212.03734">comparison of methods to deal with some of the complications from small scales</a>. I led the galaxy-galaxy lensing measurements for DES Y1 and Y3 (<a href="https://arxiv.org/abs/2105.13541">Prat et al. 2018</a>, <a href="https://arxiv.org/abs/2105.13539">2022</a>), which involved developing and validating methods to extract the cleanest possible measurements.</p>
-
-								<p>More recently, I have been exploring measurements in regimes where we haven't looked much before. For example, together with the undergraduate student Nathalie Chicoine at UChicago (which now is a graduate student at the University of Pittsburg), we made the <a href="https://arxiv.org/abs/2401.08283">first detection of lensing signals around low surface brightness galaxies</a> (Chicoine, Prat et al. 2024). </p>
-
-								<h4 style="margin-top: 0.8cm;">To the higher-order regime</h4>
-								<h5><em><small>Simulation based inference applied to weak lensing mass maps</small></em></h5>
+								<h4 style="margin-top: 0.8cm;">Higher-order statistics and machine learning</h4>
 
 								<p>The early Universe was very Gaussian, so two-point statistics (like the correlations we measure in 3×2pt) capture most of the information. But the late-time Universe is non-Gaussian, which means there is a lot more information hiding in higher-order statistics. The problem is that these are computationally expensive and hard to model with traditional methods, so most analyses still focus on two-point statistics.</p>
 
 								<p>During my time as a Schmidt AI in Science Fellow, I worked on using machine learning to get at this extra information. This led to publishing a <a href="https://arxiv.org/abs/2506.13439">persistent homology analysis (a technique from topological data analysis) with DES Y3 weak lensing mass maps</a>, using simulation-based inference. This methodology yields constraints that are 70% tighter than those obtained through traditional cosmic shear two-point analysis.</p>
 
-								<h4 style="margin-top: 0.8cm;">To the large-scale regime</h4>
-								<h5><em><small>Combining Galaxy Surveys and Gravitational Wave Observatories</small></em></h5>
+								<h4 style="margin-top: 0.8cm;">Combining galaxy surveys and gravitational wave observatories</h4>
 
 								<p>On very large scales, optical surveys face some challenges: systematic errors from selection effects, and limited statistical power because of finite sky coverage. Interestingly, gravitational wave (GW) sources seem to be less affected by these issues. We have been exploring how much we could gain by <a href="https://arxiv.org/abs/2312.16289">combining LSST 3×2pt with large-scale measurements from next-generation GW experiments</a>.</p>
+
+								<h3 style="margin-top: 1.5cm;">Building for the future: Rubin Observatory and LSST</h3>
+
+								<h4 style="margin-top: 0.5cm;">TXPipe: an end-to-end analysis pipeline</h4>
+
+								<p>I am a member of the <a href="https://lsstdesc.org/">Dark Energy Science Collaboration</a> (DESC) for the Vera Rubin Observatory’s Legacy Survey of Space and Time (LSST), where I have helped develop and validate the pipelines that will be used when the data arrives. I led the development of <a href="https://txpipe.readthedocs.io/en/latest/">TXPipe</a>, a modular, end-to-end analysis pipeline designed to produce robust data vectors for 3×2pt cosmology analyses with LSST. TXPipe takes raw catalog data and handles every step through to final data vectors, incorporating systematic tests and map-based diagnostics at each stage. The goal is to make the science reproducible and to set a community standard for how these analyses should be run at Rubin scale.</p>
+
+								<li><a href="https://arxiv.org/abs/2212.09345">The catalog-to-cosmology framework for weak lensing and galaxy clustering for LSST.</a></li>
+
+								<h4 style="margin-top: 0.8cm;">Galaxy-galaxy lensing at small scales</h4>
+
+								<p>Extracting useful cosmological information from small-scale two-point measurements is tricky because of non-linearities and baryonic effects. Cosmological analyses often discard scales below a certain threshold—in the DES Y3 3×2pt analysis, this meant throwing out roughly 50% of the available signal-to-noise! Figuring out how to reliably push to smaller scales is one of the most impactful improvements we can make for future analyses.</p>
+
+								<p>I have been working on this from several angles: understanding the <a href="https://arxiv.org/abs/2106.08438">galaxy-halo connection from galaxy-galaxy lensing</a>, measuring the <a href="https://arxiv.org/abs/2506.22367">stellar-to-halo mass relation (SHMR)</a> using a new stellar mass sample for DES Y3 (available <a href="https://des.ncsa.illinois.edu/releases/y3a2/Y3stellarmass">publicly here</a>), and publishing a <a href="https://arxiv.org/abs/2212.03734">comparison of mitigation methods for small-scale systematics</a>. I also led the galaxy-galaxy lensing measurements for DES Y1 and Y3 (<a href="https://arxiv.org/abs/2105.13541">Prat et al. 2018</a>, <a href="https://arxiv.org/abs/2105.13539">2022</a>). Most recently, together with undergraduate student Nathalie Chicoine (now a graduate student at the University of Pittsburgh), we made the <a href="https://arxiv.org/abs/2401.08283">first detection of lensing signals around low surface brightness galaxies</a> (Chicoine, Prat et al. 2024).</p>
+
 
 					<h3 style="margin-top: 1cm;">List of publications</h3>
 						To follow my latest papers, check the following ADS libraries:
@@ -370,6 +397,271 @@
 						</div>
 
 				<!-- /RESEARCH -->
+
+				<!-- /CHICAGO PICS -->
+				<div class="tokyo_tm_portfolio_titles"></div>
+
+				<!-- PORTFOLIO -->
+				<div id="Photography" class="tokyo_tm_section">
+					<div class="container">
+						<div class="tokyo_tm_portfolio">
+							<div class="tokyo_tm_title">
+								<div class="title_flex">
+									<div class="left">
+										<span>Photography</span>
+									</div>
+								</div>
+							</div>
+							<div class="list_wrapper">
+								<ul class="portfolio_list gallery_zoom">
+
+									<!-- CHICAGO IN COLOR -->
+									<li class="detail">
+										<div class="inner">
+											<div class="entry tokyo_tm_portfolio_animation_wrap" data-title="Chicago In Color" data-category="Photography">
+												<a class="popup_info" href="#">
+													<img src="img/thumbs/1-1.jpg" alt="Chicago In Color" />
+													<div class="main_image" data-img-url="img/Chicago/corncobs.JPG"></div>
+												</a>
+											</div>
+										</div>
+										<div class="details_all_wrap">
+											<div class="popup_details">
+												<div class="top_image"></div>
+												<div class="portfolio_main_title"></div>
+												<div class="main_details">
+													<div class="textbox">
+														<p>I am very excited to announce that I have published a photography book with Trope. The book is called <em>Chicago In Color</em> and it can be <a href="https://trope.com/products/chicago-in-color">ordered online</a>. It is also available in many bookstores in the Chicago region (including in the Art Institute of Chicago and the Museum of Contemporary Art) and in some places in the Midwest. Prints are also available <a href="https://trope.com/collections/chicago-in-color-collection">online</a>. Here’s a selection of my favorite photographs:</p>
+													</div>
+													<div class="detailbox">
+														<ul>
+															<li><span class="first">Location</span><span>Chicago, IL, USA</span></li>
+															
+															<li><span class="first">Book</span><span><a href="https://trope.com/products/chicago-in-color">Order online</a></span></li>
+															<li><span class="first">Prints</span><span><a href="https://trope.com/collections/chicago-in-color-collection">Available online</a></span></li>
+															<li><span class="first">Press</span><span><a href="https://blockclubchicago.org/2024/11/20/astrophysicist-turns-her-eye-back-toward-earth-with-photography-book-chicago-in-color/">Block Club Chicago</a> &middot; <a href="https://news.wttw.com/2024/11/04/chicago-living-color-photography-book-focuses-chicago-european-s-point-view">WTTW</a></span></li>
+															<li><span class="first">Podcast</span><span><a href="https://www.youtube.com/watch?v=-0w1MPaIh_g">Landscape Photography World</a></span></li>
+														</ul>
+													</div>
+												</div>
+												<div class="additional_images">
+													<ul>
+														<li><div class="list_inner"><div class="my_image"><img src="img/thumbs/1-1.jpg" alt="" /><div class="main" data-img-url="img/Chicago/ChicagoColors-3.JPG"></div></div></div></li>
+														<li><div class="list_inner"><div class="my_image"><img src="img/thumbs/1-1.jpg" alt="" /><div class="main" data-img-url="img/Chicago/ChicagoColors-5.JPG"></div></div></div></li>
+														<li><div class="list_inner"><div class="my_image"><img src="img/thumbs/1-1.jpg" alt="" /><div class="main" data-img-url="img/Chicago/ChicagoInColor-4.JPG"></div></div></div></li>
+														<li><div class="list_inner"><div class="my_image"><img src="img/thumbs/1-1.jpg" alt="" /><div class="main" data-img-url="img/Chicago/ChicagoColors-2.JPG"></div></div></div></li>
+														<li><div class="list_inner"><div class="my_image"><img src="img/thumbs/1-1.jpg" alt="" /><div class="main" data-img-url="img/Chicago/ChicagoInColor-94.JPG"></div></div></div></li>
+														<li><div class="list_inner"><div class="my_image"><img src="img/thumbs/1-1.jpg" alt="" /><div class="main" data-img-url="img/Chicago/ChicagoInColor-20.JPG"></div></div></div></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</li>
+
+									<!-- STOCKHOLM -->
+									<li class="detail">
+										<div class="inner">
+											<div class="entry tokyo_tm_portfolio_animation_wrap" data-title="Stockholm" data-category="Photography">
+												<a class="popup_info" href="#">
+													<img src="img/thumbs/1-1.jpg" alt="Stockholm" />
+													<div class="main_image" data-img-url="img/Stockholm/Stockholm_In_Color-143.JPG"></div>
+												</a>
+											</div>
+										</div>
+										<div class="details_all_wrap">
+											<div class="popup_details">
+												<div class="top_image"></div>
+												<div class="portfolio_main_title"></div>
+												<div class="main_details">
+													<div class="textbox">
+														<p><em>Stockholm</em> is a continuation of the visual style of <em>Chicago In Color</em> — if you have the book, you might have noticed that the last page already hints at Sweden: blue and yellow (the colors of the flag), and even a water tower from the Swedish American Museum in Chicago. So this is the natural next chapter. Who knows, maybe it turns into a book too!</p>
+													</div>
+													<div class="detailbox">
+														<ul>
+															<li><span class="first">Location</span><span>Stockholm, Sweden</span></li>
+															
+														</ul>
+													</div>
+												</div>
+												<div class="additional_images">
+													<ul>
+										<li><div class="list_inner"><div class="my_image"><img src="img/thumbs/1-1.jpg" alt="" /><div class="main" data-img-url="img/Stockholm/Stockholm_In_Color-22.JPG"></div></div></div></li>
+										<li><div class="list_inner"><div class="my_image"><img src="img/thumbs/1-1.jpg" alt="" /><div class="main" data-img-url="img/Stockholm/Stockholm_In_Color-26.JPG"></div></div></div></li>
+										<li><div class="list_inner"><div class="my_image"><img src="img/thumbs/1-1.jpg" alt="" /><div class="main" data-img-url="img/Stockholm/Stockholm_In_Color-67.JPG"></div></div></div></li>
+										<li><div class="list_inner"><div class="my_image"><img src="img/thumbs/1-1.jpg" alt="" /><div class="main" data-img-url="img/Stockholm/Stockholm_In_Color-91.JPG"></div></div></div></li>
+										<li><div class="list_inner"><div class="my_image"><img src="img/thumbs/1-1.jpg" alt="" /><div class="main" data-img-url="img/Stockholm/Stockholm_In_Color-165.JPG"></div></div></div></li>
+										<li><div class="list_inner"><div class="my_image"><img src="img/thumbs/1-1.jpg" alt="" /><div class="main" data-img-url="img/Stockholm/Stockholm_In_Color-240.JPG"></div></div></div></li>
+										<li><div class="list_inner"><div class="my_image"><img src="img/thumbs/1-1.jpg" alt="" /><div class="main" data-img-url="img/Stockholm/Stockholm_In_Color-267.JPG"></div></div></div></li>
+										<li><div class="list_inner"><div class="my_image"><img src="img/thumbs/1-1.jpg" alt="" /><div class="main" data-img-url="img/Stockholm/Stockholm_In_Color-280.JPG"></div></div></div></li>
+										<li><div class="list_inner"><div class="my_image"><img src="img/thumbs/1-1.jpg" alt="" /><div class="main" data-img-url="img/Stockholm/Stockholm_In_Color-297.JPG"></div></div></div></li>
+										<li><div class="list_inner"><div class="my_image"><img src="img/thumbs/1-1.jpg" alt="" /><div class="main" data-img-url="img/Stockholm/Stockholm_In_Color-310.JPG"></div></div></div></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</li>
+
+									<!-- COPENHAGEN -->
+									<li class="detail">
+										<div class="inner">
+											<div class="entry tokyo_tm_portfolio_animation_wrap" data-title="Copenhagen" data-category="Photography">
+												<a class="popup_info" href="#">
+													<img src="img/thumbs/1-1.jpg" alt="Copenhagen" />
+													<div class="main_image" data-img-url="img/Copenhagen/kobenhavn-239.JPG"></div>
+												</a>
+											</div>
+										</div>
+										<div class="details_all_wrap">
+											<div class="popup_details">
+												<div class="top_image"></div>
+												<div class="portfolio_main_title"></div>
+												<div class="main_details">
+													<div class="textbox">
+														<p>I now live in Copenhagen — this is the result!</p>
+													</div>
+													<div class="detailbox">
+														<ul>
+															<li><span class="first">Location</span><span>Copenhagen, Denmark</span></li>
+															
+														</ul>
+													</div>
+												</div>
+												<div class="additional_images">
+													<ul>
+														<li><div class="list_inner"><div class="my_image"><img src="img/thumbs/1-1.jpg" alt="" /><div class="main" data-img-url="img/Copenhagen/kobenhavn-113.JPG"></div></div></div></li>
+														<li><div class="list_inner"><div class="my_image"><img src="img/thumbs/1-1.jpg" alt="" /><div class="main" data-img-url="img/Copenhagen/kobenhavn-48.JPG"></div></div></div></li>
+														<li><div class="list_inner"><div class="my_image"><img src="img/thumbs/1-1.jpg" alt="" /><div class="main" data-img-url="img/Copenhagen/kobenhavn-161.JPG"></div></div></div></li>
+														<li><div class="list_inner"><div class="my_image"><img src="img/thumbs/1-1.jpg" alt="" /><div class="main" data-img-url="img/Copenhagen/kobenhavn-180.JPG"></div></div></div></li>
+														<li><div class="list_inner"><div class="my_image"><img src="img/thumbs/1-1.jpg" alt="" /><div class="main" data-img-url="img/Copenhagen/kobenhavn-36.JPG"></div></div></div></li>
+														<li><div class="list_inner"><div class="my_image"><img src="img/thumbs/1-1.jpg" alt="" /><div class="main" data-img-url="img/Copenhagen/kobenhavn-61.JPG"></div></div></div></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</li>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /PORTFOLIO -->
+
+				<!-- /DIVERSITY -->
+				<div class="tokyo_tm_portfolio_titles"></div>
+				<div id="diversity" class="tokyo_tm_section">
+					<div class="container">
+						<div class="tokyo_tm_portfolio">
+							<div class="tokyo_tm_title">
+								<div class="title_flex">
+									<div class="left">
+										<span>Equity, diversity and inclusion</span>
+									</div>
+									</div>
+									<h3>Equity, diversity and inclusion</h3>
+
+
+									<div class="description">
+										<div class="description_inner">
+											<div class="left">
+												I care deeply about building equitable and inclusive research communities, and have been actively involved in related efforts throughout my career. Here are some of the groups I have been part of:
+														<li> <b> LSST-DESC Collaboration Council member (2023 - 2025) </b>: Organization within the DESC international collaboration to improve the collaboration culture and take care of internal policies.
+														<li> <b> <a href="https://ideajustice.github.io/">IDEA group</a> within the Astronomy and Astrophysics Department (A&A) at UChicago</b> (2021 - 2023): It is a grassroots group of early career astronomers and physicists in A&A and the Kavli Institute for Cosmological Physics (KICP) at the University of Chicago.
+														<li> <b><a href="https://astrophysics.uchicago.edu/diversityinclusion/community-engagement-working-group/">Community Engagement Working Group</a> of the A&A Department at UChicago</b> (2020 - 2023): This group is dedicated to support Black Astronomers and Physicists at the University of Chicago.
+														<li> 	<b>The Gender Equality Committee at Institut de Física d'Altes Energies (IFAE)</b> (2018 - 2019): This committee is dedicated to assess and improve the gender balance at IFAE.
+											</p>
+											</div>
+											</div>
+											</div>
+											<h4 style="margin-top: 0.5cm;">Talks and initiatives</h4>
+											 <li>	<b>Community Conversations (sponsored by PSD Inclusive Climate Grant)</b>: We invited several speakers to talk about the South Side of Chicago from different perspectives.
+										 	<li> Oral presentation on the report of the Gender Equality Committee activities, IFAE. May 2019.
+
+											<p style="margin-bottom:1cm;"></p>
+													<div class="image">
+														<div class="inner">
+															<div class="entry tokyo_tm_portfolio_animation_wrap" data-title="Natalie Moore Community Conversation" data-category="Image">
+																<a class="zoom" href="img/diversity/Natalie_Moore_event-11-3.jpeg">
+																	<img src="img/diversity/Natalie_Moore_event-11-3.jpeg" alt="" />
+																	<div class="main_image" data-img-url="img/diversity/Natalie_Moore_event-11-3.jpeg"></div>
+																</a>
+															</div>
+														</div>
+
+											</div>
+							</div>
+							</div>
+						</div>
+					</div>
+				<!-- /DIVERSITY -->
+
+			<!-- OUTREACH -->
+				<div id="outreach" class="tokyo_tm_section">
+					<div class="container">
+						<div class="tokyo_tm_portfolio">
+							<div class="tokyo_tm_title">
+								<div class="title_flex">
+									<div class="left">
+										<span>Outreach</span>
+									</div>
+								</div>
+								<div class="description">
+									<div class="description_inner">
+										<div class="left">
+											<h4>Outreach talks</h4>
+											<li>Astronomy on Tap hosted by University of Illinois. Oct 2023</li>
+											<li>Talk within the Life-long Learning Fermilab program. Sep 2021</li>
+											<li>Talk at High School IES Matadepera, Barcelona. Jan 2019</li>
+											<li>Talk in <a href="https://www.fundaciocatalunya-lapedrera.com/en/mad-science">"Mad for Science"</a> High School program, Barcelona. Mar 2018</li>
+											<li>Public talk, Astronomical Association of Sant Cugat - Valldoreix (AASCV), Barcelona. Oct 2017</li>
+
+											<p style="margin-bottom:1cm;"></p>
+											<div class="image">
+												<div class="inner">
+													<div class="entry tokyo_tm_portfolio_animation_wrap" data-title="Astronomy on Tap public talk" data-category="Image">
+														<a class="zoom" href="img/outreach/4K9A3298_Original.png">
+															<img src="img/outreach/4K9A3298_Original.png" alt="" />
+															<div class="main_image" data-img-url="img/outreach/4K9A3298_Original.png"></div>
+														</a>
+													</div>
+												</div>
+											</div>
+
+											<h4 style="margin-top: 1cm;">Media Engagement</h4>
+											<p>I have had the chance to talk about our DES work in various media outlets:</p>
+											<li>Interview in <a href="https://spaceref.com/astronomy/dark-energy-survey-completes-six-year-mission/">SpaceRef</a> (Jun 2023)</li>
+											<li><a href="https://noirlab.edu/public/news/noirlab2309/">NOIRLab article</a> about the Dark Energy Survey (May 2023)</li>
+											<li>Interview with <a href="https://news.uchicago.edu/story/dark-energy-survey-year-3-results-universe-might-be-less-clumpy-we-thought">UChicago Press</a> and with a Catalan newspaper about our Y3 results (May 2021)</li>
+											<li>Local radio interview by college students (Oct 2017)</li>
+
+											<h4 style="margin-top: 1cm;">Participation in videos</h4>
+											<li>Participation in the outreach Youtube channel <a href="https://www.youtube.com/watch?v=r2aY2HvlI5o&t=3s&ab_channel=AnideAnisotrop%C3%ADa">Ani the Anisotropia</a></li>
+											<li>Recording a video with High School students about <a href="https://www.youtube.com/watch?v=jujt89wL1w0&t=8s">Maps of dark matter</a>, which aired on local Barcelona TV. May 2017</li>
+
+											<h4 style="margin-top: 1cm;">Other</h4>
+											<li><strong><a href="https://scientifika.se/">ScientiFika</a> organizer</strong> (2024-2025): I was part of the team organizing this public science communication series in Sweden—a fun way to share research with the local community and fellow researchers!</li>
+											<li>Organizer of the <a href="https://astrophysics.uchicago.edu/news/article/a-cosmic-merger-of-science-and-art-for-south-side-students-the-south-side-science-art-contest/">South Side of Chicago Art Contest</a>, University of Chicago. Mar 2023</li>
+											<li>I was part of the organizing team for the <a href="https://physicalsciences.uchicago.edu/events/event/1683/?past=y">first KICP Outreach Symposium</a> at the University of Chicago. Sep 2020</li>
+											<li>Organized an activity to measure the Hubble Constant for the <a href="https://www.fundaciocatalunya-lapedrera.com/en/mad-science">"Mad for Science"</a> High School program, Barcelona. May 2017</li>
+											<li>Together with Chihway Chang, we created an infographic for the Dark Energy Survey (see below). Jan 2021. </li>
+										</div>
+									</div>
+								</div>
+								<div class="image">
+									<div class="inner">
+										<div class="entry tokyo_tm_portfolio_animation_wrap" data-title="DES infographic" data-category="Image">
+											<a class="zoom" href="img/outreach/DES_infographic_final.png">
+												<img src="img/outreach/DES_infographic_final.png" alt="" />
+												<div class="main_image" data-img-url="img/outreach/DES_infographic_final.png"></div>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /OUTREACH -->
 
 				<!-- /CV -->
 				<div class="tokyo_tm_portfolio_titles"></div>
@@ -413,430 +705,6 @@
 				</div>
 				</div>
 				<!-- /CV -->
-
-				<!-- /DIVERSITY -->
-				<div class="tokyo_tm_portfolio_titles"></div>
-				<div id="diversity" class="tokyo_tm_section">
-					<div class="container">
-						<div class="tokyo_tm_portfolio">
-							<div class="tokyo_tm_title">
-								<div class="title_flex">
-									<div class="left">
-										<span>Equity, diversity and inclusion</span>
-									</div>
-									</div>
-									<h3>Equity, diversity and inclusion</h3>
-
-
-									<div class="description">
-										<div class="description_inner">
-											<div class="left">
-												Throughout my career, I have been part of the following groups:
-														<li> <b> LSST-DESC Collaboration Council member (2023 - 2025) </b>: Organization within the DESC international collboration to improve the collboration culture and take care of internal policies.
-														<li> <b> <a href="https://ideajustice.github.io/">IDEA group</a> within the Astronomy and Astrophysics Department (A & A) at UChicago</b> (2021 - 2023): It is a grassroots group of early career astronomers and physicsts in A & A and the Kavli Institute for Cosmological Physics (KICP) at the University of Chicago.
-														<li> <b><a href="https://astrophysics.uchicago.edu/diversityinclusion/community-engagement-working-group/">Community Engagement Working Group</a> of the A & A Department at UChicago</b> (2020 - 2023): This group is dedicated to support Black Astronomers and Physicists at the University of Chicago.
-														<li> 	<b>The Gender Equality Committee at Institut de Física d'Altes Energies (IFAE)</b> (2018 - 2019): This committee is dedicated to assess and improve the gender balance at IFAE.
-											</p>
-											</div>
-											</div>
-											</div>
-											<h4 style="margin-top: 0.5cm;">Talks and initiatives</h4>
-											 <li>	<b>Community Conversations (sponsored by PSD Inclusive Climate Grant)</b>: We invited several speakers to talk about the South Side of Chicago from different perspectives.
-										 	<li> Oral presentation on the report of the Gender Equality Committee activities, IFAE. May 2019.
-
-											<h4 style="margin-top: 1cm;">Resources</h4>
-
-											<li> <a href="https://astrophysics.uchicago.edu/about/cool-places-to-visit-on-the-south-side-of-chicago/">Cool places to visit in the South Side of Chicago</a>.
-												<p style="margin-bottom:1cm;"></p>
-													<div class="image">
-														<div class="inner">
-															<div class="entry tokyo_tm_portfolio_animation_wrap" data-title="Natalie Moore Community Conversation" data-category="Image">
-																<a class="zoom" href="img/diversity/Natalie_Moore_event-11-3.jpeg">
-																	<img src="img/diversity/Natalie_Moore_event-11-3.jpeg" alt="" />
-																	<div class="main_image" data-img-url="img/diversity/Natalie_Moore_event-11-3.jpeg"></div>
-																</a>
-															</div>
-														</div>
-
-											</div>
-							</div>
-							</div>
-						</div>
-					</div>
-				<!-- /DIVERSITY -->
-
-			<!-- OUTREACH -->
-				<div id="outreach" class="tokyo_tm_section">
-					<div class="container">
-						<div class="tokyo_tm_portfolio">
-							<div class="tokyo_tm_title">
-								<div class="title_flex">
-									<div class="left">
-										<span>Outreach</span>
-									</div>
-								</div>
-								<div class="description">
-									<div class="description_inner">
-										<div class="left">
-											<h4>Current Activities</h4>
-											<li><strong>ScientiFika organizer</strong> (2024-2025): I have been part of the team organizing this public science communication series here in Sweden—it's been a fun way to share research with the local community and fellow researchers!</li>
-
-											<h4 style="margin-top: 0.8cm;">Outreach talks</h4>
-											<li>Astronomy on Tap hosted by University of Illinois. Oct 2023</li>
-											<li>Talk within the Life-long Learning Fermilab program. Sep 2021</li>
-											<li>Talk at High School IES Matadepera, Barcelona. Jan 2019</li>
-											<li>Talk in <a href="https://www.fundaciocatalunya-lapedrera.com/en/mad-science">"Mad for Science"</a> High School program, Barcelona. Mar 2018</li>
-											<li>Public talk, Astronomical Association of Sant Cugat - Valldoreix (AASCV), Barcelona. Oct 2017</li>
-
-											<p style="margin-bottom:1cm;"></p>
-											<div class="image">
-												<div class="inner">
-													<div class="entry tokyo_tm_portfolio_animation_wrap" data-title="Astronomy on Tap public talk" data-category="Image">
-														<a class="zoom" href="img/outreach/4K9A3298_Original.png">
-															<img src="img/outreach/4K9A3298_Original.png" alt="" />
-															<div class="main_image" data-img-url="img/outreach/4K9A3298_Original.png"></div>
-														</a>
-													</div>
-												</div>
-											</div>
-
-											<h4 style="margin-top: 1cm;">Media Engagement</h4>
-											<p>I have had the chance to talk about our DES work in various media outlets:</p>
-											<li>Interview in <a href="https://spaceref.com/astronomy/dark-energy-survey-completes-six-year-mission/">SpaceRef</a> (Jun 2023)</li>
-											<li><a href="https://noirlab.edu/public/news/noirlab2309/">NOIRLab article</a> about the Dark Energy Survey (May 2023)</li>
-											<li>Interview with <a href="https://news.uchicago.edu/story/dark-energy-survey-year-3-results-universe-might-be-less-clumpy-we-thought">UChicago Press</a> and with a Catalan newspaper about our Y3 results (May 2021)</li>
-											<li>Local radio interview by college students (Oct 2017)</li>
-
-											<h4 style="margin-top: 1cm;">Participation in videos</h4>
-											<li>Participation in the outreach Youtube channel <a href="https://www.youtube.com/watch?v=r2aY2HvlI5o&t=3s&ab_channel=AnideAnisotrop%C3%ADa">Ani the Anisotropia</a></li>
-											<li>Recording a video with High School students about <a href="https://www.youtube.com/watch?v=jujt89wL1w0&t=8s">Maps of dark matter</a>, which aired on local Barcelona TV. May 2017</li>
-
-											<h4 style="margin-top: 1cm;">Other</h4>
-											<li>I was part of the organizing team for the <a href="https://physicalsciences.uchicago.edu/events/event/1683/?past=y">first KICP Outreach Symposium</a> at the University of Chicago. Sep 2020</li>
-											<li>Organized an activity to measure the Hubble Constant for the <a href="https://www.fundaciocatalunya-lapedrera.com/en/mad-science">"Mad for Science"</a> High School program, Barcelona. May 2017</li>
-											<li>Together with Chihway Chang, we created an infographic for the Dark Energy Survey (see below). Jan 2021. </li>
-										</div>
-									</div>
-								</div>
-								<div class="image">
-									<div class="inner">
-										<div class="entry tokyo_tm_portfolio_animation_wrap" data-title="DES infographic" data-category="Image">
-											<a class="zoom" href="img/outreach/DES_infographic_final.png">
-												<img src="img/outreach/DES_infographic_final.png" alt="" />
-												<div class="main_image" data-img-url="img/outreach/DES_infographic_final.png"></div>
-											</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- /OUTREACH -->
-
-				<!-- /CHICAGO PICS -->
-				<div class="tokyo_tm_portfolio_titles"></div>
-				<div id="Photography" class="tokyo_tm_section">
-					<div class="container">
-						<div class="tokyo_tm_portfolio">
-							<div class="tokyo_tm_title">
-								<div class="title_flex">
-									<div class="left">
-										<span>Chicago In Color</span>
-									</div>
-									</div>
-
-									<h3>Chicago In Color Project </h3>
-
-									<div class="description">
-										<div class="description_inner">
-											<div class="left">
-												<p style="margin-bottom:1cm;"> I am  very excited to announce that I have just published a photography book with Trope. The book is called <em>Chicago In Color</em> and  it can  be <a href="https://trope.com/products/chicago-in-color">ordered online</a>. It is also available in many bookstores in the Chicago region (including in the Art Institute of Chicago and the Museum Of Contemporary Art!) and in some places in the Midwest. Prints are also available online <a href="https://trope.com/collections/chicago-in-color-collection">here</a>. All photographs from the book can be printed on request as well. Here's a selection of my favorite photographs: </p>
-												</div>
-													</div>
-													</div>
-													<div class="list_wrapper">
-														<ul class="portfolio_list gallery_zoom">
-															<li class="image">
-																<div class="inner">
-																	<div class="entry tokyo_tm_portfolio_animation_wrap" data-title="Flamingo Sculpture in the Chicago Loop." data-category="Image">
-																		<a class="zoom" href="img/Chicago/ChicagoColors-2.JPG">
-																			<img src="img/Chicago/ChicagoColors-2.JPG" alt="" />
-																			<div class="main_image" data-img-url="img/Chicago/ChicagoColors-2.JPG"></div>
-																		</a>
-																	</div>
-																</div>
-															</li>
-															<li class="image">
-																<div class="inner">
-																	<div class="entry tokyo_tm_portfolio_animation_wrap" data-title="Sculpture in Pullman National Monument." data-category="Image">
-																		<a class="zoom" href="img/Chicago/ChicagoColors-3.JPG">
-																			<img src="img/Chicago/ChicagoColors-3.JPG" alt="" />
-																			<div class="main_image" data-img-url="img/Chicago/ChicagoColors-3.JPG"></div>
-																		</a>
-																	</div>
-																</div>
-															</li>
-
-
-															<li class="image">
-																<div class="inner">
-																	<div class="entry tokyo_tm_portfolio_animation_wrap" data-title="Two Prudential Plaza in the Loop." data-category="Image">
-																		<a class="zoom" href="img/Chicago/ChicagoColors-5.JPG">
-																			<img src="img/Chicago/ChicagoColors-5.JPG" alt="" />
-																			<div class="main_image" data-img-url="img/Chicago/ChicagoColors-5.JPG"></div>
-																		</a>
-																	</div>
-																</div>
-															</li>
-
-															<li class="image">
-																<div class="inner">
-																	<div class="entry tokyo_tm_portfolio_animation_wrap" data-title="The Marina Towers buildings." data-category="Image">
-																		<a class="zoom" href="img/Chicago/ChicagoColors-58.JPG">
-																			<img src="img/Chicago/ChicagoColors-58.JPG" alt="" />
-																			<div class="main_image" data-img-url="img/Chicago/ChicagoColors-58.JPG"></div>
-																		</a>
-																	</div>
-																</div>
-															</li>
-
-													</ul>
-												</div>
-
-							</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-
-				<!-- /CHICAGO PICS -->
-
-
-
-				<div class="tokyo_tm_portfolio_titles"></div>
-
-				<!-- PORTFOLIO -->
-				<div id="ChicagoColors" class="tokyo_tm_section">
-					<div class="container">
-						<div class="tokyo_tm_portfolio">
-							<div class="tokyo_tm_title">
-								<div class="title_flex">
-									<div class="left">
-										<span>ChicagoColors</span>
-										<h3>Creative Portfolio</h3>
-									</div>
-									<div class="portfolio_filter">
-										<ul>
-											<li><a href="#" class="current" data-filter="*">All</a></li>
-											<li><a href="#" data-filter=".vimeo">Vimeo</a></li>
-											<li><a href="#" data-filter=".youtube">Youtube</a></li>
-											<li><a href="#" data-filter=".soundcloud">Soundcloud</a></li>
-											<li><a href="#" data-filter=".image">Image</a></li>
-											<li><a href="#" data-filter=".detail">Detail</a></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="list_wrapper">
-								<ul class="portfolio_list gallery_zoom">
-									<li class="vimeo">
-										<div class="inner">
-											<div class="entry tokyo_tm_portfolio_animation_wrap" data-title="Teresa Butler" data-category="Vimeo">
-												<a class="popup-vimeo" href="https://vimeo.com/312334044">
-													<img src="img/thumbs/1-1.jpg" alt="" />
-													<div class="main_image" data-img-url="img/portfolio/5.jpg"></div>
-												</a>
-											</div>
-										</div>
-									</li>
-									<li class="youtube">
-										<div class="inner">
-											<div class="entry tokyo_tm_portfolio_animation_wrap" data-title="Ashley Flores" data-category="Youtube">
-												<a class="popup-youtube" href="https://www.youtube.com/watch?v=Amq-qlqbjYA">
-													<img src="img/thumbs/1-1.jpg" alt="" />
-													<div class="main_image" data-img-url="img/portfolio/6.jpg"></div>
-												</a>
-											</div>
-										</div>
-									</li>
-									<li class="soundcloud">
-										<div class="inner">
-											<div class="entry tokyo_tm_portfolio_animation_wrap" data-title="Derek Smith" data-category="Soundcloud">
-												<a class="soundcloude_link mfp-iframe audio" href="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/252739311&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
-													<img src="img/thumbs/1-1.jpg" alt="" />
-													<div class="main_image" data-img-url="img/portfolio/4.jpg"></div>
-												</a>
-											</div>
-										</div>
-									</li>
-									<li class="image">
-										<div class="inner">
-											<div class="entry tokyo_tm_portfolio_animation_wrap" data-title="Gloria Jenkins" data-category="Image">
-												<a class="zoom" href="img/portfolio/3.jpg">
-													<img src="img/thumbs/1-1.jpg" alt="" />
-													<div class="main_image" data-img-url="img/portfolio/3.jpg"></div>
-												</a>
-											</div>
-										</div>
-									</li>
-									<li class="detail">
-										<div class="inner">
-											<div class="entry tokyo_tm_portfolio_animation_wrap" data-title="Selena Gomez" data-category="Detail">
-												<a class="popup_info" href="#">
-													<img src="img/thumbs/1-1.jpg" alt="" />
-													<div class="main_image" data-img-url="img/portfolio/7.jpg"></div>
-												</a>
-											</div>
-										</div>
-										<div class="details_all_wrap">
-											<div class="popup_details">
-												<div class="top_image"></div>
-												<div class="portfolio_main_title"></div>
-												<div class="main_details">
-													<div class="textbox">
-														<p>We live in a world where we need to move quickly and iterate on our ideas as flexibly as possible. Building mockups strikes the ideal balance between true-life representation of the end product and ease of modification.</p>
-														<p>Mockups are useful both for the creative phase of the project - for instance when you're trying to figure out your user flows or the proper visual hierarchy - and the production phase when they will represent the target product. Making mockups a part of your creative and development process allows you to quickly and easily ideate.</p>
-													</div>
-													<div class="detailbox">
-														<ul>
-															<li>
-																<span class="first">Client</span>
-																<span>Alvaro Morata</span>
-															</li>
-															<li>
-																<span class="first">Category</span>
-																<span><a href="#">Detail</a></span>
-															</li>
-															<li>
-																<span class="first">Date</span>
-																<span>March 07, 2021</span>
-															</li>
-															<li>
-																<span class="first">Share</span>
-																<ul class="share">
-																	<li><a href="#"><i class="icon-facebook-squared"></i></a></li>
-																	<li><a href="#"><i class="icon-twitter-squared"></i></a></li>
-																	<li><a href="#"><i class="icon-behance-squared"></i></a></li>
-																	<li><a href="#"><i class="icon-linkedin-squared"></i></a></li>
-																</ul>
-															</li>
-														</ul>
-													</div>
-												</div>
-												<div class="additional_images">
-													<ul>
-														<li>
-															<div class="list_inner">
-																<div class="my_image">
-																	<img src="img/thumbs/4-2.jpg" alt="" />
-																	<div class="main" data-img-url="img/portfolio/1.jpg"></div>
-																</div>
-															</div>
-														</li>
-														<li>
-															<div class="list_inner">
-																<div class="my_image">
-																	<img src="img/thumbs/4-2.jpg" alt="" />
-																	<div class="main" data-img-url="img/portfolio/2.jpg"></div>
-																</div>
-															</div>
-														</li>
-														<li>
-															<div class="list_inner">
-																<div class="my_image">
-																	<img src="img/thumbs/4-2.jpg" alt="" />
-																	<div class="main" data-img-url="img/portfolio/3.jpg"></div>
-																</div>
-															</div>
-														</li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</li>
-									<li class="detail">
-										<div class="inner">
-											<div class="entry tokyo_tm_portfolio_animation_wrap" data-title="Ave Simone" data-category="Detail">
-												<a class="popup_info" href="#">
-													<img src="img/thumbs/1-1.jpg" alt="" />
-													<div class="main_image" data-img-url="img/portfolio/8.jpg"></div>
-												</a>
-											</div>
-										</div>
-										<div class="details_all_wrap">
-											<div class="popup_details">
-												<div class="top_image"></div>
-												<div class="portfolio_main_title"></div>
-												<div class="main_details">
-													<div class="textbox">
-														<p>We live in a world where we need to move quickly and iterate on our ideas as flexibly as possible. Building mockups strikes the ideal balance between true-life representation of the end product and ease of modification.</p>
-														<p>Mockups are useful both for the creative phase of the project - for instance when you're trying to figure out your user flows or the proper visual hierarchy - and the production phase when they will represent the target product. Making mockups a part of your creative and development process allows you to quickly and easily ideate.</p>
-													</div>
-													<div class="detailbox">
-														<ul>
-															<li>
-																<span class="first">Client</span>
-																<span>Alvaro Morata</span>
-															</li>
-															<li>
-																<span class="first">Category</span>
-																<span><a href="#">Detail</a></span>
-															</li>
-															<li>
-																<span class="first">Date</span>
-																<span>March 07, 2021</span>
-															</li>
-															<li>
-																<span class="first">Share</span>
-																<ul class="share">
-																	<li><a href="#"><i class="icon-facebook-squared"></i></a></li>
-																	<li><a href="#"><i class="icon-twitter-squared"></i></a></li>
-																	<li><a href="#"><i class="icon-behance-squared"></i></a></li>
-																	<li><a href="#"><i class="icon-linkedin-squared"></i></a></li>
-																</ul>
-															</li>
-														</ul>
-													</div>
-												</div>
-												<div class="additional_images">
-													<ul>
-														<li>
-															<div class="list_inner">
-																<div class="my_image">
-																	<img src="img/thumbs/4-2.jpg" alt="" />
-																	<div class="main" data-img-url="img/portfolio/1.jpg"></div>
-																</div>
-															</div>
-														</li>
-														<li>
-															<div class="list_inner">
-																<div class="my_image">
-																	<img src="img/thumbs/4-2.jpg" alt="" />
-																	<div class="main" data-img-url="img/portfolio/2.jpg"></div>
-																</div>
-															</div>
-														</li>
-														<li>
-															<div class="list_inner">
-																<div class="my_image">
-																	<img src="img/thumbs/4-2.jpg" alt="" />
-																	<div class="main" data-img-url="img/portfolio/3.jpg"></div>
-																</div>
-															</div>
-														</li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- /PORTFOLIO -->
 
 				<!-- NEWS -->
 				<div id="news" class="tokyo_tm_section">

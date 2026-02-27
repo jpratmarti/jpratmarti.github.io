@@ -11,6 +11,9 @@ jQuery(document).ready(function(){
 	// here all ready functions
 	
 	window.onhashchange = function() {
+		// Don't navigate if a modal or lightbox is open
+		if(jQuery('.tokyo_tm_modalbox').hasClass('opened')){return;}
+		if(jQuery('.mfp-wrap').length > 0){return;}
 		var location 	= window.location.href;
 		var array		= location.split('#');
 		var href;
@@ -226,6 +229,7 @@ function tokyo_tm_modalbox_portfolio(){
 		modalBox.find('.top_image').html(parent.find('.popup_info').html());
 		modalBox.find('.portfolio_main_title').html('<h3>'+title+'</h3>'+'<span>'+category+'</span>');
 		tokyo_tm_popup();
+		return false;
 	});
 }
 
