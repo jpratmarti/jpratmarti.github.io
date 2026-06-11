@@ -226,7 +226,7 @@ function tokyo_tm_modalbox_portfolio(){
 		
 		modalBox.addClass('opened');
 		modalBox.find('.description_wrap').html(details);
-		var popupCover = parent.data('popup-cover');
+		var popupCover = parent.attr('data-popup-cover');
 		if (popupCover) {
 			modalBox.find('.top_image').html('<img src="img/thumbs/1-1.jpg" alt="" /><div class="main_image" style="background-image: url(' + popupCover + ');"></div>');
 		} else {

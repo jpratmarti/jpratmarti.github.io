@@ -63,10 +63,30 @@
   #Photography .my_image img,
   #Photography .portfolio_list li .inner img { aspect-ratio: 1 / 1; }
 
+  /* Card title overlay — hidden on desktop (hover tooltip handles it) */
+  .card-title-mobile {
+    display: none;
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 0.5em 0.8em;
+    background: rgba(0,0,0,0.45);
+    color: #fff;
+    font-size: 0.95em;
+    font-family: inherit;
+    letter-spacing: 0.02em;
+    pointer-events: none;
+  }
+
   /* ── Mobile fixes ── */
   @media (max-width: 767px) {
     /* Photography: stack project cards vertically */
     #Photography .portfolio_list li { width: 100%; }
+
+    /* Show card title overlay on mobile */
+    .card-title-mobile { display: block; }
+
+    /* Exhibition gallery: override inline widths so thumbnails are full-width on mobile */
+    .tokyo_tm_modalbox .additional_images ul li { width: 100% !important; }
 
     /* Hide floating title tooltip (touch devices never fire mouseleave) */
     .tokyo_tm_portfolio_titles { display: none !important; }
@@ -428,10 +448,11 @@
 									<!-- CHICAGO IN COLOR -->
 									<li class="detail">
 										<div class="inner">
-											<div class="entry tokyo_tm_portfolio_animation_wrap" data-title="Chicago In Color" data-category="Photography">
+											<div class="entry tokyo_tm_portfolio_animation_wrap" data-title="Chicago In Color" data-category="A photography book">
 												<a class="popup_info" href="#">
 													<img src="img/thumbs/1-1.jpg" alt="Chicago In Color" />
 													<div class="main_image" data-img-url="img/Chicago/corncobs.JPG"></div>
+													<span class="card-title-mobile">Chicago In Color</span>
 												</a>
 											</div>
 										</div>
@@ -471,10 +492,11 @@
 									<!-- A RESPONSIBILITY TO AWE -->
 									<li class="detail" data-popup-cover="img/A_responsibility_to_Awe/Exhibition.JPG">
 										<div class="inner">
-											<div class="entry tokyo_tm_portfolio_animation_wrap" data-title="A Responsibility to Awe" data-category="Photography">
+											<div class="entry tokyo_tm_portfolio_animation_wrap" data-title="A Responsibility to Awe" data-category="An art and science exhibition">
 												<a class="popup_info" href="#">
 													<img src="img/thumbs/1-1.jpg" alt="A Responsibility to Awe" />
 													<div class="main_image" data-img-url="img/A_responsibility_to_Awe/A_responsability_to_awe-3.JPG"></div>
+													<span class="card-title-mobile">A Responsibility to Awe</span>
 												</a>
 											</div>
 										</div>
