@@ -226,7 +226,12 @@ function tokyo_tm_modalbox_portfolio(){
 		
 		modalBox.addClass('opened');
 		modalBox.find('.description_wrap').html(details);
-		modalBox.find('.top_image').html(parent.find('.popup_info').html());
+		var popupCover = parent.data('popup-cover');
+		if (popupCover) {
+			modalBox.find('.top_image').html('<img src="img/thumbs/1-1.jpg" alt="" /><div class="main_image" style="background-image: url(' + popupCover + ');"></div>');
+		} else {
+			modalBox.find('.top_image').html(parent.find('.popup_info').html());
+		}
 		modalBox.find('.portfolio_main_title').html('<h3>'+title+'</h3>'+'<span>'+category+'</span>');
 		tokyo_tm_popup();
 		return false;
