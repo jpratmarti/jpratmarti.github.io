@@ -446,6 +446,11 @@ h6 { font-size: 16px; }
 	visibility: hidden;
 	z-index: 9;
 }
+/* Hide the default Home section on deep-link loads until JS opens the target section */
+.deeplink #home.animated:not(.active){
+	opacity: 0;
+	visibility: hidden;
+}
 .tokyo_tm_section::-webkit-scrollbar{
   width: 0px;
 }

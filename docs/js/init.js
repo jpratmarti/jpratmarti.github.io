@@ -49,7 +49,13 @@ jQuery(document).ready(function(){
 	// Open the section from the URL hash on initial page load
 	// (hashchange does not fire on first load)
 	if(window.location.hash && window.location.hash !== '#home'){
-		jQuery('.transition_link a[href="'+window.location.hash+'"]').trigger('click','clear');
+		var deeplink = jQuery('.transition_link a[href="'+window.location.hash+'"]');
+		if(deeplink.length){
+			deeplink.trigger('click','clear');
+		} else {
+			// Unknown hash: undo the pre-paint hide so Home shows
+			jQuery('html').removeClass('deeplink');
+		}
 	}
 
 });

@@ -97,6 +97,13 @@
   }
 </style>
 
+<script>
+	// Hide the default Home section before first paint on deep-link loads
+	if (window.location.hash && window.location.hash !== '#home') {
+		document.documentElement.className += ' deeplink';
+	}
+</script>
+
 </head>
 
 <body>
