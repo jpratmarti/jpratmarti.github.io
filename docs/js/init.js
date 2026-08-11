@@ -45,7 +45,13 @@ jQuery(document).ready(function(){
 	tokyo_tm_contact_form();
 	tokyo_tm_owl_carousel();
 	tokyo_tm_location();
-	
+
+	// Open the section from the URL hash on initial page load
+	// (hashchange does not fire on first load)
+	if(window.location.hash && window.location.hash !== '#home'){
+		jQuery('.transition_link a[href="'+window.location.hash+'"]').trigger('click','clear');
+	}
+
 	jQuery(window).load('body', function(){
 		tokyo_tm_my_load();
 	});
