@@ -52,10 +52,6 @@ jQuery(document).ready(function(){
 		jQuery('.transition_link a[href="'+window.location.hash+'"]').trigger('click','clear');
 	}
 
-	jQuery(window).load('body', function(){
-		tokyo_tm_my_load();
-	});
-	
 });
 
 // -----------------------------------------------------
