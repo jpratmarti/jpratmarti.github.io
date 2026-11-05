@@ -235,7 +235,11 @@ function tokyo_tm_modalbox_portfolio(){
 		modalBox.addClass('opened');
 		modalBox.find('.description_wrap').html(details);
 		var popupCover = parent.attr('data-popup-cover');
-		if (popupCover) {
+		var popupCoverFull = parent.attr('data-popup-cover-full');
+		if (popupCoverFull) {
+			// Show the whole image uncropped (e.g. portrait photos)
+			modalBox.find('.top_image').html('<img class="popup_cover_full" src="' + popupCoverFull + '" alt="' + title + '" />');
+		} else if (popupCover) {
 			modalBox.find('.top_image').html('<img src="img/thumbs/1-1.jpg" alt="" /><div class="main_image" style="background-image: url(' + popupCover + ');"></div>');
 		} else {
 			modalBox.find('.top_image').html(parent.find('.popup_info').html());
